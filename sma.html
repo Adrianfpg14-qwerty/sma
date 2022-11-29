@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta charset="UTF-8">  
+<title>SMA</title>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  img{
+    width:90%;
+  }
+</style>
+</head>
+<body>
+<h2>HOW TO</h2>
+<p>1: Presiona F12</p>
+<p>2: Selecciona la opción 'Console'</p>
+<p>3: Pega el siguiente texto y presiona Enter</p>
+<hr>
+<pre>
+let options = ['Nunca', 'Casi Nunca', 'A Veces', 'Casi Siempre', 'Siempre'];
+let option = parseInt(prompt(`Digite un número (Este corresponderá a su opción a elegir)\n1 - ${options[0]}\n2 - ${options[1]}\n3 - ${options[2]}\n4 - ${options[3]}\n5 - ${options[4]}`));
+let AllSpan = Array.from(document.querySelectorAll('span.fa.fa-circle-o'));
+
+let reset = 1;
+AllSpan.forEach((e) => {
+  if(reset == option){
+    e.classList.remove('fa-circle-o');
+    e.classList.add('fa-check-circle-o');
+    e.classList.add('u-success-text');
+  }
+  if(reset == 5){
+    reset = 1;
+  }else{
+    reset++;
+  }
+});
+alert(`Todas las opciones han sido cambiadas a ${options[option]}`);
+console.log('Done');
+</pre>
+<hr>
+<h2>Imagen de referencia</h2>
+<img src="sma.png">
+</body>
+</html>
